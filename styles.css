@@ -1,0 +1,191 @@
+
+body {
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+}
+
+/* ======================================
+   Bước 4: Style header tag 
+   Modify: background-color
+   ====================================== */
+header {
+    background-color: #4CAF50;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Style cho ảnh trong header */
+header img {
+    display: block;
+    margin: 15px auto;
+    border-radius: 10px;
+    border: 3px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ======================================
+   Bước 5: Style nav tag 
+   Modify: background-color
+   ====================================== */
+nav {
+    background-color: #2E7D32;
+    padding: 10px 0;
+    margin-bottom: 15px;
+}
+
+/* Style cho danh sách trong nav */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* ======================================
+   Bước 8: Style li tag 
+   Modify: display và width
+   ====================================== */
+li {
+    display: inline-block;
+    width: 250px;
+    padding: 10px;
+}
+
+/* Style cho links trong nav */
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #81C784;
+    text-decoration: underline;
+}
+
+/* ======================================
+   Bước 9: Style h1 tag 
+   Modify: text-align, font-family, color
+   ====================================== */
+h1 {
+    text-align: center;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    color: #FFFFFF;
+    font-size: 2.8em;
+    margin: 20px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* ======================================
+   Bước 6: Style main tag 
+   Modify: background-color và font-size
+   ====================================== */
+main {
+    background-color: #F1F8E9;
+    font-size: 20px;
+    padding: 30px 50px;
+    min-height: 500px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ======================================
+   Bước 10: Style p tag 
+   Modify: line-height
+   ====================================== */
+p {
+    line-height: 2;
+    margin-bottom: 20px;
+    color: #1B5E20;
+}
+
+/* Style cho links trong main content */
+main a {
+    color: #0277BD;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main a:hover {
+    color: #01579B;
+    text-decoration: underline;
+}
+
+/* ======================================
+   Bước 7: Style footer tag 
+   Modify: background-color
+   ====================================== */
+footer {
+    background-color: #2E7D32;
+    color: white;
+    padding: 25px;
+    text-align: center;
+    margin-top: 0;
+}
+
+footer p {
+    color: white;
+    line-height: 1.8;
+    margin: 0;
+}
+
+footer a {
+    color: #FFD54F;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    color: #FFEB3B;
+    text-decoration: underline;
+}
+
+/* ======================================
+   Style cho gallery images 
+   (trang neighborhood và parks)
+   ====================================== */
+main div {
+    text-align: center;
+    margin-top: 20px;
+}
+
+main div img {
+    margin: 10px;
+    border: 2px solid #4CAF50;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+main div img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* ======================================
+   Responsive Design cho Mobile
+   ====================================== */
+@media (max-width: 768px) {
+    li {
+        display: block;
+        width: 100%;
+        margin: 5px 0;
+    }
+    
+    main {
+        padding: 20px;
+        font-size: 18px;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+    
+    body {
+        font-size: 16px;
+    }
+}
