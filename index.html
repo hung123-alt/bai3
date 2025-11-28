@@ -1,64 +1,119 @@
 <!DOCTYPE html>
-<html lang="vi">
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vietnamese Coffee Culture</title>
-  <link rel="stylesheet" href="styles.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Photo Gallery</title>
+	<style>
+		body {
+			margin: 2%;
+			border: 1px solid black;
+			background-color: #b3b3b3;
+		}
+		
+		#image {
+			line-height: 650px;
+			width: 575px;
+			height: 650px;
+			border: 5px solid black;
+			margin: 0 auto;
+			background-color: #8e68ff;
+			background-image: url('');
+			background-repeat: no-repeat;
+			color: #FFFFFF;
+			text-align: center;
+			background-size: 100%;
+			margin-bottom: 25px;
+			font-size: 150%;
+		}
+		
+		.preview {
+			width: 10%;
+			margin-left: 17%;
+			border: 10px solid black;
+			cursor: pointer;
+			transition: transform 0.3s ease;
+		}
+		
+		.preview:hover {
+			transform: scale(1.1);
+		}
+		
+		img {
+			width: 95%;
+		}
+	</style>
 </head>
-
 <body>
-  <!-- Skip to Main Content -->
-  <a href="#main" class="skip">Skip to Main Content</a>
+	
+	<div id="image">
+		Hover over an image below to display here.
+	</div>
+	
+	<img class="preview" 
+	     alt="Styling with a Bandana" 
+	     src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/389177/bacon.jpg" 
+	     onmouseover="upDate(this)" 
+	     onmouseout="unDo()">
+	
+	<img class="preview" 
+	     alt="With My Boy" 
+	     src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/389177/bacon2.JPG" 
+	     onmouseover="upDate(this)" 
+	     onmouseout="unDo()">
+	
+	<img class="preview" 
+	     src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/389177/bacon3.jpg" 
+	     alt="Young Puppy" 
+	     onmouseover="upDate(this)" 
+	     onmouseout="unDo()">
 
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="coffee-types.html">Coffee Types</a></li>
-        <li><a href="cafes.html">Famous Cafés</a></li>
-      </ul>
-    </nav>
-    <h1>☕ Vietnamese Coffee Culture</h1>
-  </header>
+	<script>
+		/* Name this external file gallery.js */
 
-  <main id="main">
-    <section class="intro">
-      <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=800" 
-           alt="Traditional Vietnamese coffee with condensed milk">
-      
-      <div class="intro-text">
-        <h2>The Art of Vietnamese Coffee</h2>
-        <p>Vietnamese coffee is more than just a beverage—it's a cultural experience that combines French colonial 
-           influence with local traditions. Known for its strong, bold flavor and unique brewing method using a 
-           phin filter, Vietnamese coffee has captured the hearts of coffee lovers worldwide.</p>
-        
-        <p>From the iconic cà phê sữa đá (iced coffee with condensed milk) to the adventurous cà phê trứng 
-           (egg coffee), Vietnamese coffee culture offers a rich tapestry of flavors and experiences. The ritual 
-           of slowly brewing coffee and watching it drip into a cup is a meditative practice that encourages 
-           slowing down in our fast-paced world.</p>
-        
-        <h3>What Makes Vietnamese Coffee Special?</h3>
-        <ul>
-          <li><strong>Robusta Beans:</strong> Vietnamese coffee primarily uses robusta beans, which have a stronger, 
-              more bitter taste than arabica.</li>
-          <li><strong>Phin Filter:</strong> The traditional metal filter allows for a slow, controlled brew that 
-              extracts maximum flavor.</li>
-          <li><strong>Condensed Milk:</strong> Sweet condensed milk balances the strong coffee perfectly, creating 
-              a harmonious blend.</li>
-          <li><strong>Social Culture:</strong> Coffee shops are gathering places where people spend hours chatting, 
-              working, or people-watching.</li>
-        </ul>
-      </div>
-    </section>
-  </main>
+		/**
+		 * Function to update the main display when hovering over a preview image
+		 * @param {HTMLElement} previewPic - The image element being hovered over
+		 */
+		function upDate(previewPic) {
+		  // Step 1: Log to console to check if event is triggering
+		  console.log("upDate function called!");
+		  
+		  // Step 2: Log information about the previewPic
+		  console.log("Alt text:", previewPic.alt);
+		  console.log("Source:", previewPic.src);
+		  
+		  // Step 3: Get the element with id "image"
+		  const imageDiv = document.getElementById('image');
+		  
+		  // Step 4: Change the text to the alt text of the preview image
+		  imageDiv.innerHTML = previewPic.alt;
+		  
+		  // Step 5: Change the background image to the source of the preview image
+		  imageDiv.style.backgroundImage = "url('" + previewPic.src + "')";
+		  
+		  console.log("Updated background image to:", previewPic.src);
+		}
 
-  <footer>
-    <p>&copy; 2024 Vietnamese Coffee Culture | Created for Web Design Course | 
-       Images from <a href="https://unsplash.com" target="_blank">Unsplash</a></p>
-  </footer>
+		/**
+		 * Function to undo changes when mouse leaves the preview image
+		 */
+		function unDo() {
+		  // Log to console to check if event is triggering
+		  console.log("unDo function called!");
+		  
+		  // Get the element with id "image"
+		  const imageDiv = document.getElementById('image');
+		  
+		  // Reset the background image to empty (original state from CSS)
+		  imageDiv.style.backgroundImage = "url('')";
+		  
+		  // Reset the text to the original text
+		  imageDiv.innerHTML = "Hover over an image below to display here.";
+		  
+		  console.log("Reset to original state");
+		}
+	</script>
 
 </body>
-
 </html>
